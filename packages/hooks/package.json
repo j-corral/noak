@@ -1,0 +1,30 @@
+{
+  "name": "@noak/hooks",
+  "version": "1.0.0",
+  "author": "Jonathan Corral <contact@jonathan-corral.fr>",
+  "license": "MIT",
+  "description": "React Hooks functions reusable inside a Noak project",
+  "keywords": [
+    "react",
+    "hooks",
+    "noak",
+    "next.js"
+  ],
+  "main": "dist/noak-hooks.cjs.js",
+  "module": "dist/noak-hooks.esm.js",
+  "types": "dist/noak-hooks.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-corral/noak.git",
+    "directory": "packages/hooks"
+  },
+  "bugs": {
+    "url": "git+https://github.com/j-corral/noak/issues"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}

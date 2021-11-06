@@ -1,0 +1,30 @@
+{
+  "name": "@noak/utils",
+  "version": "1.0.0",
+  "author": "Jonathan Corral <contact@jonathan-corral.fr>",
+  "license": "MIT",
+  "description": "React generic functions reusable inside a Noak project",
+  "keywords": [
+    "react",
+    "functions",
+    "noak",
+    "next.js"
+  ],
+  "main": "dist/noak-utils.cjs.js",
+  "module": "dist/noak-utils.esm.js",
+  "types": "dist/noak-utils.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-corral/noak.git",
+    "directory": "packages/utils"
+  },
+  "bugs": {
+    "url": "git+https://github.com/j-corral/noak/issues"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}

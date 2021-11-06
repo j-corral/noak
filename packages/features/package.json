@@ -1,0 +1,30 @@
+{
+  "name": "@noak/features",
+  "version": "1.0.0",
+  "author": "Jonathan Corral <contact@jonathan-corral.fr>",
+  "license": "MIT",
+  "description": "Business logic features ready to use inside a page (blog, portfolio, legal, booking, shop, restaurant, ...)",
+  "keywords": [
+    "react",
+    "features",
+    "noak",
+    "next.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-corral/noak.git",
+    "directory": "packages/features"
+  },
+  "bugs": {
+    "url": "git+https://github.com/j-corral/noak/issues"
+  },
+  "main": "dist/noak-features.cjs.js",
+  "module": "dist/noak-features.esm.js",
+  "types": "dist/noak-features.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}

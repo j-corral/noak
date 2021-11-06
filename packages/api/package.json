@@ -1,0 +1,30 @@
+{
+  "name": "@noak/api",
+  "version": "1.0.0",
+  "author": "Jonathan Corral <contact@jonathan-corral.fr>",
+  "license": "MIT",
+  "description": "Generic api handle of features to implement inside pages/api",
+  "keywords": [
+    "react",
+    "api",
+    "noak",
+    "next.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-corral/noak.git",
+    "directory": "packages/api"
+  },
+  "bugs": {
+    "url": "git+https://github.com/j-corral/noak/issues"
+  },
+  "main": "dist/noak-api.cjs.js",
+  "module": "dist/noak-api.esm.js",
+  "types": "dist/noak-api.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
