@@ -14,10 +14,14 @@
     "packages/*"
   ],
   "scripts": {
-    "clean": "yarn lerna clean -y && yarn lerna bootstrap && yarn lerna exec 'rm -rf ./dist'",
-    "build": "lerna run build",
     "lerna": "lerna",
+    "clean": "lerna clean -y && lerna bootstrap && rimraf ./dist",
+    "build": "yarn prepublish",
+    "build:lib": "yarn workspace packages run build",
+    "dev": "lerna run dev --parallel --stream",
+    "prepublish": "lerna run prepublish",
     "test": "lerna run test --scope={@noak/components}",
+    "test-types": "yarn tsc",
     "diff": "lerna diff",
     "new-version": "lerna version --conventional-commits --yes"
   },
@@ -27,13 +31,15 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
     "eslint": "^8.2.0",
     "lerna": "^4.0.0",
+    "next": "^12.0.3",
+    "next-translate": "^1.1.1",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
-    "typescript": "^4.4.4",
-    "next": "^12.0.3",
-    "next-translate": "^1.1.1"
+    "typescript": "^4.4.4"
   },
-  "main": "index.js"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts"
 }
