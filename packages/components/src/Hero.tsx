@@ -16,7 +16,7 @@ export default function Hero({ title, fontSize, height, justifyContent, colorBeg
   const { t } = useTranslation();
 
   const text = title ?? t("msg:welcome");
-  const textSize = fontSize ?? "6vw";
+  const textSize = fontSize ?? "5vw";
   const sectionHeight = height ?? "100vh";
   const justify = justifyContent ?? "center";
   const colorA = colorBegin ?? "#7928CA";
