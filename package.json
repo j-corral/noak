@@ -12,10 +12,12 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "frontend/*",
-    "backend/*"
+    "frontend",
+    "backend"
   ],
   "scripts": {
+    "format": "prettier --write \"packages/**/*.ts\" \"packages/**/*.tsx\" ",
+    "lint": "tslint -p tsconfig.json",
     "lerna": "lerna",
     "clean": "lerna clean -y && lerna bootstrap && rimraf ./dist && rimraf packages/*/dist",
     "clean:full": "rimraf node_modules && yarn clean",
@@ -23,7 +25,12 @@
     "build:lib": "yarn workspace packages run build",
     "dev": "lerna run dev --parallel --stream",
     "prepublish": "lerna run prepublish",
-    "test": "lerna run test --scope={@noak/components}",
+    "test": "lerna run test",
+    "prepare" : "yarn build",
+    "prepublishOnly" : "yarn test && yarn lint",
+    "preversion" : "yarn lint",
+    "version" : "yarn format && git add -A packages",
+    "postversion" : "git push && git push --tags",
     "test-types": "yarn tsc",
     "diff": "lerna diff",
     "new-version": "lerna version --conventional-commits --yes"
@@ -37,12 +44,17 @@
     "@babel/core": "^7.16.0",
     "@swc/cli": "^0.1.51",
     "@swc/core": "^1.2.107",
+    "@types/jest": "^27.0.2",
     "eslint": "^8.2.0",
+    "jest": "^27.3.1",
     "lerna": "^4.0.0",
     "next": "^12.0.3",
     "next-translate": "^1.1.1",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.7",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.4.4"
   },
   "main": "dist/index.js",

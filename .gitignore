@@ -1,9 +1,11 @@
 # global
+dist
 node_modules
 .yarn
-dist
+yarn-error.log
 
 # packages
 packages/*/node_modules
 packages/*/dist
 packages/*/tsconfig.tsbuildinfo
+packages/*/yarn-error.log
