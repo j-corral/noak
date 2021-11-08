@@ -11,7 +11,8 @@ type TProps = {
     colorEnd?: string;
 };
 
-export default function Hero({ title, fontSize, height, justifyContent, colorBegin, colorEnd }: TProps) {
+export const Hero = ({ title, fontSize, height, justifyContent, colorBegin, colorEnd }: TProps) => {
+
     const text = title ?? 'Hello World';
     const textSize = fontSize ?? '6vw';
     const sectionHeight = height ?? '100vh';
@@ -19,7 +20,7 @@ export default function Hero({ title, fontSize, height, justifyContent, colorBeg
     const colorA = colorBegin ?? '#7928CA';
     const colorB = colorEnd ?? '#FF0080';
     const gradient = `linear(to-l, ${colorB}, ${colorA})`;
-
+    
     return (
         <Flex alignItems="center" height={sectionHeight} justifyContent={justify}>
             <Heading bgClip="text" bgGradient={gradient} fontSize={textSize}>
@@ -27,4 +28,4 @@ export default function Hero({ title, fontSize, height, justifyContent, colorBeg
             </Heading>
         </Flex>
     );
-}
+};
