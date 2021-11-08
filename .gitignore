@@ -3,9 +3,15 @@ dist
 node_modules
 .yarn
 yarn-error.log
+stories
+
 
 # packages
 packages/*/node_modules
 packages/*/dist
 packages/*/tsconfig.tsbuildinfo
 packages/*/yarn-error.log
+
+# frontend
+frontend/*/node_modules
+frontend
