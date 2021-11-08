@@ -1,3 +1,9 @@
+# global
 node_modules
 .yarn
 dist
+
+# packages
+packages/*/node_modules
+packages/*/dist
+packages/*/tsconfig.tsbuildinfo

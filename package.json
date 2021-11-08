@@ -11,12 +11,15 @@
   "repository": "git+https://github.com/j-corral/noak.git",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "frontend/*",
+    "backend/*"
   ],
   "scripts": {
     "lerna": "lerna",
-    "clean": "lerna clean -y && lerna bootstrap && rimraf ./dist",
-    "build": "yarn prepublish",
+    "clean": "lerna clean -y && lerna bootstrap && rimraf ./dist && rimraf packages/*/dist",
+    "clean:full": "rimraf node_modules && yarn clean",
+    "build": "lerna run build",
     "build:lib": "yarn workspace packages run build",
     "dev": "lerna run dev --parallel --stream",
     "prepublish": "lerna run prepublish",
@@ -32,6 +35,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
+    "@swc/cli": "^0.1.51",
+    "@swc/core": "^1.2.107",
     "eslint": "^8.2.0",
     "lerna": "^4.0.0",
     "next": "^12.0.3",

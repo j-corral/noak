@@ -18,12 +18,23 @@
   "bugs": {
     "url": "git+https://github.com/j-corral/noak/issues"
   },
-  "main": "dist/noak-components.cjs.js",
-  "module": "dist/noak-components.esm.js",
-  "types": "dist/noak-components.cjs.d.ts",
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "*.md"
   ],
+  "scripts": {
+        "build": "rimraf ./dist && yarn build:cjs && yarn build:esm && yarn build:types",
+        "build:cjs": "swc ./src -d dist/cjs --config-file ../../.swcrc",
+        "build:esm": "swc ./src -d dist/esm --config-file ../../.swcrc -C module.type=es6",
+        "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir dist/types",
+        "watch": "swc src --config-file .swcrc -w"
+    },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.16",
     "@chakra-ui/react": "^1",
