@@ -25,16 +25,16 @@
   "typings": "dist/types/index.d.ts",
   "files": [
     "dist",
-    "src",
     "*.md"
   ],
   "scripts": {
-        "build": "rimraf ./dist && yarn build:cjs && yarn build:esm && yarn build:types",
-        "build:cjs": "swc ./src -d dist/cjs --config-file ../../.swcrc",
-        "build:esm": "swc ./src -d dist/esm --config-file ../../.swcrc -C module.type=es6",
-        "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir dist/types",
-        "watch": "swc src --config-file .swcrc -w"
-    },
+    "build": "rimraf ./dist && yarn build:cjs && yarn build:esm && yarn build:types",
+    "build:cjs": "swc ./src -d dist/cjs --config-file ../../.swcrc",
+    "build:esm": "swc ./src -d dist/esm --config-file ../../.swcrc -C module.type=es6",
+    "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir dist/types",
+    "watch": "swc src --config-file .swcrc -w",
+    "test": "jest --config ../../jestconfig.json"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.16",
     "@chakra-ui/react": "^1",
