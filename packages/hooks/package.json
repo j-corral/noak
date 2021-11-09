@@ -10,12 +10,6 @@
     "noak",
     "next.js"
   ],
-  "main": "dist/noak-hooks.cjs.js",
-  "module": "dist/noak-hooks.esm.js",
-  "types": "dist/noak-hooks.cjs.d.ts",
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/j-corral/noak.git",
@@ -23,6 +17,23 @@
   },
   "bugs": {
     "url": "git+https://github.com/j-corral/noak/issues"
+  },
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist && yarn build:cjs && yarn build:esm",
+    "build:cjs": "swc ./src -d dist/cjs --config-file ../../.swcrc",
+    "build:esm": "swc ./src -d dist/esm --config-file ../../.swcrc -C module.type=es6",
+    "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir dist/types",
+    "watch": "swc src --config-file .swcrc -w",
+    "test": "jest --config ../../jestconfig.json"
   },
   "dependencies": {
     "react": "^17.0.2"
