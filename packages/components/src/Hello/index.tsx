@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 export const Hello = (name: string) => {
-  const greeting = `Hello ${name}`;
+    const greeting = `Hello ${name}`;
 
-  return (<h1>{greeting}</h1>);
+    return <h1>{greeting}</h1>;
 };
