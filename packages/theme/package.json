@@ -1,0 +1,44 @@
+{
+  "name": "@noak/theme",
+  "version": "1.0.0",
+  "author": "Jonathan Corral <contact@jonathan-corral.fr>",
+  "license": "MIT",
+  "description": "Theme helpers for Noak",
+  "keywords": [
+    "react",
+    "theme",
+    "noak",
+    "next.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-corral/noak.git",
+    "directory": "packages/theme"
+  },
+  "bugs": {
+    "url": "git+https://github.com/j-corral/noak/issues"
+  },
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist && yarn build:cjs && yarn build:esm",
+    "build:cjs": "swc ./src -d dist/cjs --config-file ../../.swcrc",
+    "build:esm": "swc ./src -d dist/esm --config-file ../../.swcrc -C module.type=es6",
+    "build:types": "tsc --declaration --emitDeclarationOnly --declarationDir dist/types",
+    "watch": "swc src --config-file .swcrc -w",
+    "test": "jest --config ../../jest.config.json"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.12",
+    "@chakra-ui/theme-tools": "^1.2.2",
+    "@chakra-ui/utils": "^1.8.4",
+    "react": "^17.0.2"
+  }
+}
