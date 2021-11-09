@@ -4,8 +4,20 @@
     "parser": {
       "syntax": "typescript",
       "decorators": false,
-      "dynamicImport": false,
+      "dynamicImport": true,
       "tsx": true
+    },
+    "transform": {
+      "react": {
+        "pragma": "React.createElement",
+        "pragmaFrag": "React.Fragment",
+        "throwIfNamespace": true,
+        "development": false,
+        "useBuiltins": false
+      },
+      "hidden": {
+        "jest": true
+      }
     },
     "minify": {
       "compress": true
